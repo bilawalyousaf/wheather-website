@@ -1,9 +1,9 @@
 // Predefined weather data
 const weatherData = {
-    Karachi: { Precipitation: "1%", Humidity: "26%", Wind: "14 km/h" },
-    Lahore: { Precipitation: "5%", Humidity: "40%", Wind: "10 km/h" },
-    Islamabad: { Precipitation: "0%", Humidity: "35%", Wind: "12 km/h" },
-    Multan: { Precipitation: "2%", Humidity: "30%", Wind: "11 km/h" }
+    Karachi: { Temp: "29°C", Precipitation: "1%", Humidity: "26%", Wind: "14 km/h" },
+    Lahore: { Temp: "24°C", Precipitation: "5%", Humidity: "40%", Wind: "10 km/h" },
+    Islamabad: { Temp: "21°C", Precipitation: "0%", Humidity: "35%", Wind: "12 km/h" },
+    Multan: { Temp: "30°C", Precipitation: "2%", Humidity: "30%", Wind: "11 km/h" }
 };
 
 const form = document.getElementById("form");
@@ -24,11 +24,12 @@ form.addEventListener("submit", function (e) {
     if (weatherData[city]) {
         const data = weatherData[city];
         output.innerHTML = `
-      <strong>${city}</strong><br>
-      Precipitation: ${data.Precipitation} <br>
-      Humidity: ${data.Humidity} <br>
-      Wind: ${data.Wind}
-    `;
+    <strong>${city}</strong><br>
+    Temperature: ${data.Temp} <br>
+    Precipitation: ${data.Precipitation} <br>
+    Humidity: ${data.Humidity} <br>
+    Wind: ${data.Wind}
+`;
         output.classList.add("animate__animated", "animate__fadeIn");
     } else {
         output.innerHTML = "City not found!";
